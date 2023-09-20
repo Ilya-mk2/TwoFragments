@@ -30,27 +30,35 @@ class FirstFragment : Fragment() {
         val sportsmanBtn : Button = view.findViewById(R.id.sportsman_button)
 
         studentBtn.setOnClickListener{
-            val intent = SecondFragment.getIntent(requireContext(), Student())
+
             val frag2 = SecondFragment.newInstance(Student())
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.second_container, frag2)?.commit()
 
 
         }
         professorBtn.setOnClickListener{
-            val intent = SecondFragment.getIntent(requireContext(), Student(), Professor())
+            val frag2 = SecondFragment.newInstance(Student(), Professor())
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.second_container, frag2)?.commit()
 
 
         }
         soldierBtn.setOnClickListener{
-            val intent = SecondFragment.getIntent(requireContext(), Student(), Professor(), Soldier())
+            val frag2 = SecondFragment.newInstance(Student(), Professor(), Soldier())
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.second_container, frag2)?.commit()
 
         }
         gamerBtn.setOnClickListener{
-            val intent = SecondFragment.getIntent(requireContext(), Student(), Professor(), Soldier(), Gamer())
+            val frag2 = SecondFragment.newInstance(Student(), Professor(), Soldier(), Gamer())
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.second_container, frag2)?.commit()
         }
         sportsmanBtn.setOnClickListener{
-            val intent = SecondFragment.getIntent(requireContext(), Student(),
-                Professor(), Soldier(), Gamer(), Sportsman()
-            )
+            val frag2 = SecondFragment.newInstance(Student(), Professor(), Soldier(), Gamer(), Sportsman())
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.second_container, frag2)?.commit()
         }
     }
 
